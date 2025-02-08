@@ -80,14 +80,14 @@ class LivePortraitp2p:
         driving_image,
         **kwargs
     ):
-        
+        print("----xu0---")
         for (batch_number, image) in enumerate(source_image):
             i = 255. * image.cpu().numpy()
             img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
             metadata = None
         
             metadata = PngInfo()           
-            img.save("custom_nodes/Comfyui_Liveportrait_v3/assets/examples/source/s12.jpg", pnginfo=metadata, compress_level=4)
+            img.save("custom_nodes/Comfyui-Liveportrait_v3/assets/examples/source/s12.jpg", pnginfo=metadata, compress_level=4)
 
         for (batch_number, image) in enumerate(driving_image):
             i = 255. * image.cpu().numpy()
@@ -95,12 +95,15 @@ class LivePortraitp2p:
             metadata = None
         
             metadata = PngInfo()           
-            img.save("custom_nodes/Comfyui_Liveportrait_v3/assets/examples/source/d9.jpg", pnginfo=metadata, compress_level=4)
+            img.save("custom_nodes/Comfyui-Liveportrait_v3/assets/examples/source/d9.jpg", pnginfo=metadata, compress_level=4)
 
 
         tyro.extras.set_accent_color("bright_cyan")
-        
-        args = tyro.cli(ArgumentConfig)
+        print("----xu00---")
+        args = ArgumentConfig()#tyro.cli(ArgumentConfig)
+
+        print(args)
+        print("----xu---")
         #raise ValueError(1)
         
         
