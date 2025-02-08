@@ -38,7 +38,7 @@ class LivePortraitWrapper(object):
         except:
             self.device = 'cuda:' + str(self.device_id)
 
-        model_config = yaml.load(open('custom_nodes/Comfyui_Liveportrait_v3/src/config/models.yaml', 'r'), Loader=yaml.SafeLoader)#########################################
+        model_config = yaml.load(open('custom_nodes/Comfyui-Liveportrait_v3/src/config/models.yaml', 'r'), Loader=yaml.SafeLoader)#########################################
         # init F
         self.appearance_feature_extractor = load_model("models/Liveportrait_v3/liveportrait/base_models/appearance_feature_extractor.pth", model_config, self.device, 'appearance_feature_extractor')
         log(f'Load appearance_feature_extractor from F done.')
